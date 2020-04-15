@@ -21,3 +21,11 @@
     - { source: 'root_DOTdsrc_with_TLS_enabled.j2', destination: '/root/.dsrc_with_TLS_enabled' }
     - { source: 'root_DOTdsrc_via_ldapi.j2', destination: '/root/.dsrc_via_ldapi' }
     - { source: 'root_DOTdsrc_via_ldapi.j2', destination: '/root/.dsrc' }
+
+- name: 'Create /etc/openldap/ldap.conf'
+  template:
+    src: 'etc_openldap_ldap.conf.j2'
+    dest: '/etc/openldap/ldap.conf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
