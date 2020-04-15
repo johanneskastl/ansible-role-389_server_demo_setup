@@ -13,8 +13,8 @@ None.
 Role Variables
 --------------
 
-None.
-
+`slapd_root_password`: (Required) Server administration password for the 389 directory server.
+`ldap_base`: Suffix to be used for the demo content (Default: `dc=training,dc=b1-systems,dc=de`).
 Dependencies
 ------------
 
