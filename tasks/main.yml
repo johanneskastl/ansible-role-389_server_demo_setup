@@ -1,0 +1,23 @@
+---
+# 389_server_demo_setup/tasks/main.yml
+
+- name: 'Create template /tmp/instance.inf for initial setup'
+  template:
+    src: 'tmp_instance.inf.j2'
+    dest: '/tmp/instance.inf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+
+- name: 'Create different ~/.dsrc variants from template'
+  template:
+    src: "{{ item.source }}"
+    dest: "{{ item.destination }}"
+    owner: 'root'
+    group: 'root'
+    mode: '0600'
+  with_items:
+    - { source: 'root_DOTdsrc_without_TLS.j2', destination: '/root/.dsrc_without_TLS' }
+    - { source: 'root_DOTdsrc_with_TLS_enabled.j2', destination: '/root/.dsrc_with_TLS_enabled' }
+    - { source: 'root_DOTdsrc_via_ldapi.j2', destination: '/root/.dsrc_via_ldapi' }
+    - { source: 'root_DOTdsrc_via_ldapi.j2', destination: '/root/.dsrc' }

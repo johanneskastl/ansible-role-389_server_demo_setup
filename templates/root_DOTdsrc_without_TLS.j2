@@ -1,0 +1,5 @@
+[localhost]
+uri = ldap://{{ inventory_hostname }}
+basedn = {{ ldap_base }}
+binddn = cn=Directory Manager
+tls_cacertdir = /etc/dirsrv/slapd-localhost/

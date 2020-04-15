@@ -1,0 +1,10 @@
+# /tmp/instance.inf
+[general]
+config_version = 2
+
+[slapd]
+root_password = {{ slapd_root_password }}
+
+[backend-userroot]
+sample_entries = yes
+suffix = {{ ldap_base }}

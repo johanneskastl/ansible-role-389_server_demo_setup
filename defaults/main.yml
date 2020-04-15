@@ -1,0 +1,4 @@
+---
+# 389_server_demo_setup/defaults/main.yml
+
+ldap_base: 'dc=training,dc=b1-systems,dc=de'
