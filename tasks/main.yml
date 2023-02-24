@@ -2,7 +2,7 @@
 # 389_server_demo_setup/tasks/main.yml
 
 - name: 'Create template /tmp/instance.inf for initial setup'
-  template:
+  ansible.builtin.template:
     src: 'tmp_instance.inf.j2'
     dest: '/tmp/instance.inf'
     owner: 'root'
@@ -10,7 +10,7 @@
     mode: '0644'
 
 - name: 'Create different ~/.dsrc variants from template'
-  template:
+  ansible.builtin.template:
     src: "{{ item.source }}"
     dest: "{{ item.destination }}"
     owner: 'root'
@@ -27,7 +27,7 @@
       destination: '/root/.dsrc'
 
 - name: 'Create /etc/openldap/ldap.conf'
-  template:
+  ansible.builtin.template:
     src: 'etc_openldap_ldap.conf.j2'
     dest: '/etc/openldap/ldap.conf'
     owner: 'root'
