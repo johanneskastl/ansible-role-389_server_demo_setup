@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: 'johanneskastl.389_server_demo_setup' }
+         - role: 'johanneskastl.389_server_demo_setup'
 
 License
 -------
